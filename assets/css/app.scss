@@ -8,3 +8,216 @@
 @import "trip";
 //@import "style_navbar";
 
+@import "map";
+
+
+body {
+    background-color: white;
+}
+/* Home*/
+.box-logo-home-tao {
+    text-align: center;
+    margin-top: 2em;
+}
+.box-title-home > h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+}
+.txt-connect-home {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+}
+.box-user-home-connect {
+    text-align: center;
+    margin-top: 2em;
+}
+.button-connect-home {
+    color: #678BFF;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0.5em;
+}
+.box-img-avatar-home-connect {
+    margin-bottom: 2em;
+}
+.box-deconnect-home {
+    margin-top: 2em;
+
+}
+/*search*/
+.box-title-search > h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+.box-profil-infos-home {
+    padding-top: 1em;
+    margin-top: 1em;
+    border: 2px solid #E3E3E3;
+    border-radius: 30px;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.box-infos-pts-search {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.li-infos-profil {
+    display: inline;
+    margin: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+.ul-infos-profil {
+    text-align: center;
+    display: table-cell; /* comportement visuel de cellule */
+    vertical-align: middle;
+}
+.link-footer-action {
+    display: inline-block;
+    margin: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
+.box-footer-actions {
+    margin-top: 1em;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #E3E3E3;
+}
+
+.align-link-footer {
+    display: inline-block;
+}
+/*Profil*/
+.box-title-account {
+    margin-top: 1em;
+    text-align: center;
+}
+.box-title-account > h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2em;
+}
+.txt-user-account {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
+.box-infos-user-account {
+    text-align: center;
+}
+.userName-profil {
+    font-weight: bold;
+}
+.box-infos-profil-user {
+    padding-top: 1em;
+    margin-top: 1em;
+    border: 2px solid #E3E3E3;
+    border-radius: 30px;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.infos-pts-account {
+    margin: 1em;
+}
+.colored-pts-account {
+    color: #01D758;
+}
+.box-recompence-dispo {
+    background-color: #01D758;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    margin-left: 2em;
+    border-radius: 10px;
+    text-align: center;
+}
+.txt-recompences {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.2em;
+}
+.txt-recompenses-2 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.2em;
+    font-size: 1.2em;
+}
+.txt-recompenses-access {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.box-recompence-no-dispo {
+    background-color: #5A5E6B;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    margin-left: 2em;
+    border-radius: 10px;
+    text-align: center;
+}
+/* connexion"*/
+
+
+.box-login-p-login {
+    text-align: center;
+}
+.sign-in-h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2em;
+    margin-top: 1em;
+ }
+.avis-not-sub-login {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 1em;
+}
+.align-button-login {
+   margin: 1em;
+}
+.deco-navbar {
+    margin-left: 1.5em;
+    padding-right: 1.5em;
+}
+/* page des scores*/
+.box-title-score {
+    margin-top: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.box-title-score > h1 {
+    color: black;
+    font-family: 'Righteous', cursive;
+    font-size: 2.2em;
+}
+.box-table-score {
+    text-align: center;
+}
+.table-score {
+    margin:auto;
+}
+.player {
+    padding: 1.5em;
+    color: black;
+    font-family: 'Righteous', cursive;
+    font-size: 1.2em;
+}
+.score-player {
+    color: #01D758;
+    font-family: 'Righteous', cursive;
+    font-size: 1.2em;
+}
