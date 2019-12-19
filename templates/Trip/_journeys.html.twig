@@ -3,15 +3,39 @@
     {% for key, journey in journeys %}
         <h2>Voyage {{ key +1 }}:</h2>
         <p>Co2: {{ journey.co2_emission.value }} gEC</p>
-        <p>Temps : {{ journey.durations.total / 60 }} min</p>
+        <p>Temps Total : {{ journey.durations.total / 60 }} min</p>
+
+        {% if journey.fare.total.value is defined %}
+            <p>Prix : {{ journey.fare.total.value /100 }} €</p>
+        {% else %}
+            <p>Prix : Gratuit</p>
+        {% endif %}
+
         <h3>Sections :</h3>
-
         {% for section in journey.sections %}
+            <p class="text-primary">Type: {{ section.type }}</p>
+            <p>Temps : {{ section.duration / 60 }} min</p>
+            {% if section.mode is defined %}
+                <p>Mode : {{ section.mode }}</p>
+            {% endif %}
             {% if section.type != 'waiting' %}
+                <p>Départ : {{ section.from.name }}</p>
+                <p>Arrivée : {{ section.to.name }}</p>
 
-                {{ dump(section.from.name) }}
-                {{ dump(section) }}
+                {% if section.display_informations is defined %}
+                    <p>Commercial mode : {{ section.display_informations.commercial_mode }}</p>
+                    <p>Phisycal mode : {{ section.display_informations.physical_mode }}</p>
+                    <p>Ligne : {{ section.display_informations.code }}</p>
+                {% endif %}
 
+                {% if section.transfer_type is defined %}
+                    <p>Transfer type : {{ section.transfer_type }}</p>
+                {% endif %}
+
+                <p>Heure de départ : {{ section.departure_date_time|date('H:i') }}</p>
+                <p>Heure d'arrivée : {{ section.arrival_date_time|date('H:i') }}</p>
+
+                <hr>
             {% endif %}
         {% endfor %}
         <hr>
