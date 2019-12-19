@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header>
+        {% include 'include/_navbar.html.twig' %}
+    </header>
+    <h1>Bienvenue {{ app.user.username }}</h1>
+
+    <main>
+        <div class="container-fluid">
+        <div>
+            <iframe class="map w-100" style="height: 100vh"
+                    src="https://data.orleans-metropole.fr/explore/embed/dataset/mobilite-places-disponibles-parkings-en-temps-reel/parkings-en-temps-reel/"></iframe>
+        </div>
+        </div>
+    </main>
+{% endblock %}
