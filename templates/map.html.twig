@@ -28,6 +28,7 @@
         maxZoom: 20
     }).addTo(carte);
     var markers = L.markerClusterGroup();
+
     var icone = L.icon({
         iconUrl: "https://i.postimg.cc/2Sq8yn2f/bike.png",
         iconSize: [40, 40],
@@ -40,18 +41,21 @@
             iconAnchor: [25, 50],
             popupAnchor: [-3, -76],
     });
+
     {% for infoStation in infoStations %}
     var marker = L.marker([{{infoStation.pointgeo.0}}, {{infoStation.pointgeo.1}}], {icon:icone});
     marker.bindPopup("<p> {{ infoStation.nomstation }} nombre de place {{ infoStation.numplace }} </p>");
     markers.addLayer(marker);
     markersArray.push(marker);
     {% endfor %}
+
     {% for infoParking in infoParkings %}
     var marker = L.marker([{{infoParking.coords.0}}, {{infoParking.coords.1}}], {icon:icone_car});
     marker.bindPopup("<p> {{ infoParking.name }} nombre de place disponible {{ infoParking.dispo }} </p>");
     markers.addLayer(marker);
     markersArray.push(marker);
     {% endfor %}
+
     var groupe = new L.featureGroup(markersArray);
     carte.fitBounds(groupe.getBounds().pad(0.5));
     carte.addLayer(markers);
