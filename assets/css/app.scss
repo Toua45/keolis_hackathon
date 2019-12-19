@@ -51,7 +51,7 @@ body {
 .box-profil-infos-home {
     padding-top: 1em;
     margin-top: 1em;
-    border: 1px solid #E3E3E3;
+    border: 2px solid #E3E3E3;
     border-radius: 30px;
     margin-right: 2em;
     margin-left: 2em;
@@ -68,9 +68,26 @@ body {
     display: inline;
     margin: 1em;
     font-family: 'Roboto', sans-serif;
+    font-size: 1em;
 }
 .ul-infos-profil {
     text-align: center;
     display: table-cell; /* comportement visuel de cellule */
     vertical-align: middle;
+}
+.link-footer-action {
+    display: inline-block;
+    margin: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
+.box-footer-actions {
+    margin-top: 1em;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #E3E3E3;
+}
+
+.align-link-footer {
+    display: inline-block;
 }

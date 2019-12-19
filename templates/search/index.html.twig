@@ -8,12 +8,14 @@
         <div class="box-title-search">
             <p><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
                         alt="avatar image" height="60"></p>
-            <h1>Bienvenue {{ app.user.username }}</h1>
+            <h1>{{ app.user.username }}</h1>
             <div class="box-infos-pts-search">
-                <ul class="align-middle">
-                    <li class="li-infos-profil">Points: 10000</li>
-                    <li class="li-infos-profil">Niveau: 4</li>
-                </ul>
+                <div class="box-links-footer">
+                    <div class="align-middle">
+                        <p class="li-infos-profil">Points: 10000</p>
+                        <p class="li-infos-profil">Niveau: 4</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -23,6 +25,13 @@
             <iframe class="map w-100" style="height: 100vh"
                     src="https://data.orleans-metropole.fr/explore/embed/dataset/mobilite-places-disponibles-parkings-en-temps-reel/parkings-en-temps-reel/"></iframe>
         </div>
+        </div>
+        <div class="box-footer-actions">
+            <div class="align-middle">
+                <p class="align-link-footer"> <a href="#" class="link-footer-action">Itinéraire</a></p>
+                <p class="align-link-footer"><a href="#" class="link-footer-action">Profil</a></p>
+                <p class="align-link-footer"><a href="#" class="link-footer-action">Carte</a></p>
+            </div>
         </div>
     </main>
 {% endblock %}
