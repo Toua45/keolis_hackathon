@@ -22,4 +22,6 @@ class MapController extends AbstractController
             'infoParkings' => $infoParkings,
         ]);
     }
+
+
 }
