@@ -1,6 +1,6 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
-//@import "style_navbar";
+@import "map";
 
 
 
@@ -40,6 +40,7 @@ body {
 }
 .box-deconnect-home {
     margin-top: 2em;
+
 }
 /*search*/
 .box-title-search > h1 {
