@@ -4,8 +4,19 @@
     <header>
         {% include 'include/_navbar.html.twig' %}
     </header>
-    <h1>Bienvenue {{ app.user.username }}</h1>
-
+    <div class="box-profil-infos-home">
+        <div class="box-title-search">
+            <p><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
+                        alt="avatar image" height="60"></p>
+            <h1>Bienvenue {{ app.user.username }}</h1>
+            <div class="box-infos-pts-search">
+                <ul class="align-middle">
+                    <li class="li-infos-profil">Points: 10000</li>
+                    <li class="li-infos-profil">Niveau: 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <main>
         <div class="container-fluid">
         <div>
