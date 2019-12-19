@@ -184,3 +184,35 @@ body {
 .align-button-login {
    margin: 1em;
 }
+.deco-navbar {
+    margin-left: 1.5em;
+    padding-right: 1.5em;
+}
+/* page des scores*/
+.box-title-score {
+    margin-top: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.box-title-score > h1 {
+    color: black;
+    font-family: 'Righteous', cursive;
+    font-size: 2.2em;
+}
+.box-table-score {
+    text-align: center;
+}
+.table-score {
+    margin:auto;
+}
+.player {
+    padding: 1.5em;
+    color: black;
+    font-family: 'Righteous', cursive;
+    font-size: 1.2em;
+}
+.score-player {
+    color: #01D758;
+    font-family: 'Righteous', cursive;
+    font-size: 1.2em;
+}

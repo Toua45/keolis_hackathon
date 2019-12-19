@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les scores dans votre ville{% endblock %}
+
+{% block body %}
+    <header>
+        {% include 'include/_navbar.html.twig' %}
+    </header>
+   <main>
+    <div class="box-title-score">
+        <h1>Meilleurs scores "verts"</h1>
+    </div>
+       <div class="box-table-score">
+           <table class="table-score">
+               <tr>
+                   <td class="player">Jean Claude</td>
+                   <td class="score-player">3300</td>
+               </tr>
+               <tr>
+                   <td class="player">Antoine</td>
+                   <td class="score-player">2800</td>
+               </tr>
+           </table>
+       </div>
+   </main>
+
+{% endblock %}
