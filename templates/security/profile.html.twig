@@ -3,14 +3,33 @@
 {% block title %}Mon compte{% endblock %}
 
 {% block body %}
-    <div>
-        <div>
-            <h1> Mon compte</h1>
-            <div>Mon identifiant : {{ app.user.email }}</div>
-            <div>Mon identifiant : {{ app.user.firstname}}</div>
-
+    <header>
+        {% include 'include/_navbar.html.twig' %}
+    </header>
+    <div class="box-title-account">
+        <h1> Mon compte</h1>
+    </div>
+    <div class="box-infos-user-account">
+        <p class="txt-user-account">Bienvenue <span class="userName-profil">{{ app.user.firstname}} !</span></p>
+    </div>
+    <div class="box-infos-profil-user">
+        <div class="infos-pts-account">
+            <p class="number-pts-account">Vos points: <span class="colored-pts-account">10000</span></p>
+        </div>
+        <div class="infos-pts-account">
+            <p class="number-pts-account">Votre niveau: 4</p>
         </div>
     </div>
-
-
+    <div class="box-recompences">
+        <div class="box-recompence-dispo">
+            <p class="txt-recompences">Bravo pour vos actions en faveur de l'environnement!</p>
+            <p class="txt-recompenses-2">Tao vous offre...</p>
+            <p class="txt-recompenses-access">10 voyages gratuits</p>
+        </div>
+        <div class="box-recompence-no-dispo">
+            <p class="txt-recompenses-2">Prochain palier: 20000</p>
+            <p class="txt-recompenses-access">Des billets gratuits pour visiter le jardin des plantes</p>
+        </div>
+    </div>
+    {% include 'include/_footer.html.twig' %}
 {% endblock %}
