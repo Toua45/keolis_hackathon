@@ -3,7 +3,9 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-
+    <header>
+        {% include 'include/_navbar.html.twig' %}
+    </header>
     {% include 'Trip/_journeys.html.twig' %}
 
 {% endblock %}
