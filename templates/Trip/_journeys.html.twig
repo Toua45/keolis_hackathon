@@ -1,44 +1,60 @@
-<div class="container">
+<h2 class="text-center">Choisi ton green voyage</h2>
 
+<div class="accordion" id="accordionExample">
     {% for key, journey in journeys %}
-        <h2>Voyage {{ key +1 }}:</h2>
-        <p>Co2: {{ journey.co2_emission.value }} gEC</p>
-        <p>Temps Total : {{ journey.durations.total / 60 }} min</p>
+        <div class="card m-2">
 
-        {% if journey.fare.total.value is defined %}
-            <p>Prix : {{ journey.fare.total.value /100 }} €</p>
-        {% else %}
-            <p>Prix : Gratuit</p>
-        {% endif %}
+            <div class="card-header" id="heading{{ key }}">
+                <button class="btn btn-link w-100 text-decoration-none text-success" type="button" data-toggle="collapse" data-target="#collapse{{ key }}" aria-expanded="false" aria-controls="collapse{{ key }}">
+                    <p>1500 pts d'expérience</p>
+                    <div class="d-flex justify-content-between">
+                        <p>CO2 : {{ journey.co2_emission.value|round() }}</p>
+                        <p>{{ (journey.durations.total / 60)|round() }} min</p>
 
-        <h3>Sections :</h3>
-        {% for section in journey.sections %}
-            <p class="text-primary">Type: {{ section.type }}</p>
-            <p>Temps : {{ section.duration / 60 }} min</p>
-            {% if section.mode is defined %}
-                <p>Mode : {{ section.mode }}</p>
-            {% endif %}
-            {% if section.type != 'waiting' %}
-                <p>Départ : {{ section.from.name }}</p>
-                <p>Arrivée : {{ section.to.name }}</p>
+                        {% if journey.fare.total.value is defined %}
+                            <p>{{ journey.fare.total.value /100 }} €</p>
+                        {% else %}
+                            <p>Gratuit</p>
+                        {% endif %}
+                    </div>
+                </button>
 
-                {% if section.display_informations is defined %}
-                    <p>Commercial mode : {{ section.display_informations.commercial_mode }}</p>
-                    <p>Phisycal mode : {{ section.display_informations.physical_mode }}</p>
-                    <p>Ligne : {{ section.display_informations.code }}</p>
-                {% endif %}
+            </div>
 
-                {% if section.transfer_type is defined %}
-                    <p>Transfer type : {{ section.transfer_type }}</p>
-                {% endif %}
+            <div id="collapse{{ key }}" class="collapse" aria-labelledby="heading{{ key }}" data-parent="#accordionExample">
 
-                <p>Heure de départ : {{ section.departure_date_time|date('H:i') }}</p>
-                <p>Heure d'arrivée : {{ section.arrival_date_time|date('H:i') }}</p>
+                <div class="card-body">
+                    {% for section in journey.sections %}
+                        <p class="text-primary">Type: {{ section.type }}</p>
+                        <p>Temps : {{ (section.duration/ 60)|round() }} min</p>
+                        {% if section.mode is defined %}
+                            <p>Mode : {{ section.mode }}</p>
+                        {% endif %}
+                        {% if section.type != 'waiting' %}
 
-                <hr>
-            {% endif %}
-        {% endfor %}
-        <hr>
+                            <p>Départ : {{ section.from.name }}</p>
+                            <p>Arrivée : {{ section.to.name }}</p>
+
+                            {% if section.display_informations is defined %}
+                                <p>Commercial mode : {{ section.display_informations.commercial_mode }}</p>
+                                <p>Physical mode : {{ section.display_informations.physical_mode }}</p>
+                                <p>Ligne : {{ section.display_informations.code }}</p>
+                            {% endif %}
+
+                            {% if section.transfer_type is defined %}
+                                <p>Transfer type : {{ section.transfer_type }}</p>
+                            {% endif %}
+
+                            <p>{{ section.departure_date_time|date('H:i') }}
+                                - {{ section.arrival_date_time|date('H:i') }}</p>
+                            <p></p>
+
+                            <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
     {% endfor %}
-
 </div>
