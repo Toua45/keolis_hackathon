@@ -1,8 +1,20 @@
-{{ dump(journeys) }}
+<div class="container">
 
-{% for key, journey in journeys %}
-    <h2>Voyage {{ key }}:</h2>
-    <p>Co2: {{ journey.co2_emission.value }} gEC</p>
-    <p>Temps : {{ journey.durations.total / 60}} min</p>
+    {% for key, journey in journeys %}
+        <h2>Voyage {{ key +1 }}:</h2>
+        <p>Co2: {{ journey.co2_emission.value }} gEC</p>
+        <p>Temps : {{ journey.durations.total / 60 }} min</p>
+        <h3>Sections :</h3>
 
-{% endfor %}
+        {% for section in journey.sections %}
+            {% if section.type != 'waiting' %}
+
+                {{ dump(section.from.name) }}
+                {{ dump(section) }}
+
+            {% endif %}
+        {% endfor %}
+        <hr>
+    {% endfor %}
+
+</div>

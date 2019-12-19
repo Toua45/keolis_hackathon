@@ -19,7 +19,7 @@ class TripController extends AbstractController
 
 
         return $this->render('Trip/index.html.twig', [
-            'journeys' => $journeys->getJourneys()
+            'journeys' => $journeys->getJourneys(),
         ]);
     }
 }

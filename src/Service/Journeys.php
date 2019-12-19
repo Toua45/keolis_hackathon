@@ -18,10 +18,4 @@ class Journeys
 
         return $content['journeys'];
     }
-
-    public function getCo2(): int
-    {
-        $journeys = $this->getJourneys();
-        $journeys[0]['co2_emission']['value'];
-    }
 }
