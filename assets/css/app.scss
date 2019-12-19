@@ -3,6 +3,94 @@
 @import "trip";
 //@import "style_navbar";
 
+@import "map";
+
+
 body {
-    background-color: red;
+    background-color: white;
+}
+/* Home*/
+.box-logo-home-tao {
+    text-align: center;
+    margin-top: 2em;
+}
+.box-title-home > h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+}
+.txt-connect-home {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+}
+.box-user-home-connect {
+    text-align: center;
+    margin-top: 2em;
+}
+.button-connect-home {
+    color: #678BFF;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0.5em;
+}
+.box-img-avatar-home-connect {
+    margin-bottom: 2em;
+}
+.box-deconnect-home {
+    margin-top: 2em;
+
+}
+/*search*/
+.box-title-search > h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+.box-profil-infos-home {
+    padding-top: 1em;
+    margin-top: 1em;
+    border: 2px solid #E3E3E3;
+    border-radius: 30px;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.box-infos-pts-search {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.li-infos-profil {
+    display: inline;
+    margin: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+.ul-infos-profil {
+    text-align: center;
+    display: table-cell; /* comportement visuel de cellule */
+    vertical-align: middle;
+}
+.link-footer-action {
+    display: inline-block;
+    margin: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
+.box-footer-actions {
+    margin-top: 1em;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #E3E3E3;
+}
+
+.align-link-footer {
+    display: inline-block;
 }
