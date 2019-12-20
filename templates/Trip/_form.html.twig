@@ -1,4 +1,16 @@
-{{ form_start(form) }}
+{% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+<h2 class="text-center mt-3 mb-3">Définit ton itinéraire</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg">
+        {{ form_start(form) }}
+    </div>
+    <div class="col-lg">
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+</div>
+<div class="col-lg">
+    <button class="btn btn-success mt-3 mb-4">{{ button_label|default('Go') }}</button>
+</div>
+</div>
+
 {{ form_end(form) }}
