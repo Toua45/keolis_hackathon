@@ -11,9 +11,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
 
-    const TRIP1 = 7400;
-    const TRIP2 = 250;
-    const TRIP3 = 150;
+    const TRIP1 = 1000;
+    const TRIP2 = 500;
+    const TRIP3 = 250;
     const LEVEL_COEFF = 1000;
 
     /**
@@ -25,7 +25,7 @@ class UserController extends AbstractController
     {
 
         $user = $userRepository->find(19);
-        var_dump($user);
+
 
 
         $xp = $user->getXp() + self::TRIP1;
