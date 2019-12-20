@@ -1,8 +1,9 @@
 // the ~ allows you to reference things in node_modules
 
 $theme-colors: (
-        "primary": #1A9D1D,
+        "primary": #188C1A,
         "secondary": #31B339,
+        "lighten": #FFFFFF,
 );
 @import "~bootstrap/scss/bootstrap";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
@@ -16,6 +17,10 @@ $theme-colors: (
 body {
     background-color: white;
     font-family: 'Dosis', sans-serif;
+}
+
+p {
+    font-size: 15pt;
 }
 
 /* Home*/

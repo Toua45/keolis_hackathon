@@ -1,10 +1,10 @@
 <h2 class="text-center">Choisi ta <span class="text-primary">Ligne Verte</span> !</h2>
 
-<div class="accordion" id="accordionExample">
+<div class="accordion mb-5" id="accordionExample">
     {% for key, journey in journeys %}
-        <div class="card m-2">
+        <div class="card m-3 border-primary">
 
-            <div class="card-header" id="heading{{ key }}">
+            <div class="card-header bg-lighten " id="heading{{ key }}">
                 <button class="btn btn-link w-100 text-decoration-none" type="button"
                         data-toggle="collapse" data-target="#collapse{{ key }}" aria-expanded="false"
                         aria-controls="collapse{{ key }}">
@@ -39,9 +39,7 @@
                                 <p>{{ section.from.name }}</p>
                             </div>
 
-
-                            <div class="d-flex justify-content-around w-75 m-auto">
-
+                            <div class="d-flex justify-content-around w-75 m-auto align-middle">
 
                                 {% if section.display_informations is defined %}
                                     {% if section.display_informations.physical_mode == 'Bus' %}
@@ -49,7 +47,7 @@
                                     {% elseif section.display_informations.physical_mode == 'Tramway' %}
                                         <i class="text-secondary fas fa-2x fa-subway"></i>
                                     {% endif %}
-                                    <p>Ligne : {{ section.display_informations.code }}</p>
+                                    <p>{{ section.display_informations.code }}</p>
                                 {% endif %}
 
                                 {% if section.mode is defined and section.mode == 'walking' %}
@@ -62,19 +60,19 @@
 
                                 {% if section.type is defined %}
                                     {% if section.type == 'bss_rent' %}
-                                        <p>Location d'un Vélo+</p>
+                                        <p class="text-primary p-2">Location d'un Vélo+</p>
                                     {% elseif section.type == 'bss_put_back' %}
-                                        <p>Déposer son Vélo+</p>
+                                        <p class="text-primary p-2">Déposer son Vélo+</p>
                                     {% endif %}
                                 {% endif %}
 
-                                <p>{{ (section.duration/ 60)|round() }} min</p>
+                                <p class="p-2 text-primary">{{ (section.duration/ 60)|round() }} <span class="text-dark">min</span></p>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <p>{{ section.arrival_date_time|date('H:i') }}</p>
-                                <p>{{ section.to.name }}</p>
+                                <p class="text-right">{{ section.to.name }}</p>
                             </div>
-                            <hr>
+                            <hr class="bg-primary">
 
                         {% endif %}
 
