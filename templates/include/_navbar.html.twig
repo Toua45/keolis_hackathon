@@ -1,5 +1,6 @@
 <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{{ path('trip_index') }}"><img src="https://i.postimg.cc/nzpMTh0f/Tao.png" alt="logo" height="40"></a>
+    <a href="{{ path('score_index') }}"><i class="fas fa-2x text-primary fa-medal"></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,11 +11,11 @@
                 {% if app.user %}
                     <div class="row">
                     <a class="nav-link p-0" href="{{ path('app_logout') }}"><button type="button" class="btn btn-danger mr-2 deco-navbar">Se deconnecter</button>
-                        </a><a href="{{ path('app_profile') }}"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
+                        </a><a href="{{ path('app_profile') }}"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-2"
                                                                      alt="avatar image" height="40"></a></div>
                 {% else %}
                     <a class="nav-link p-0" href="{{ path('app_login') }}"><button type="button" class="btn btn-success mr-2">Connexion</button>
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-1 "
                              alt="avatar image" height="35"></a>
                 {% endif %}
             </li>

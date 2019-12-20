@@ -1,8 +1,11 @@
-<h2 class="text-center mt-5 mb-3">Choisi ta <span class="text-primary">Ligne Verte</span> !</h2>
+
+{% if journeys is not empty %}
+    <h2 class="text-center mt-4 mb-3">Choisi ta <span class="text-primary">Ligne Verte</span> !</h2>
+{% endif %}
 
 <div class="accordion mb-5" id="accordionExample">
     {% for key, journey in journeys %}
-        <div class="card m-3 border-primary">
+        <div class="card mb-3 border-primary">
 
             <div class="card-header bg-lighten " id="heading{{ key }}">
                 <button class="btn btn-link w-100 text-decoration-none" type="button"
@@ -36,10 +39,10 @@
                         {% if section.type != 'waiting' %}
                             <div class="d-flex justify-content-between">
                                 <p>{{ section.departure_date_time|date('H:i') }}</p>
-                                <p>{{ section.from.name }}</p>
+                                <p class="text-right">{{ section.from.name }}</p>
                             </div>
 
-                            <div class="d-flex justify-content-around w-75 m-auto align-middle">
+                            <div class="d-flex justify-content-around w-100 m-auto align-middle">
 
                                 {% if section.display_informations is defined %}
                                     {% if section.display_informations.physical_mode == 'Bus' %}
@@ -56,8 +59,6 @@
 
                                 {% if section.mode is defined and section.mode == 'bike' %}
                                     <i class="text-secondary fas fa-2x fa-biking"></i>
-
-                                    <i class="fas fa-2x fa-biking"></i>
                                 {% endif %}
 
                                 {% if section.type is defined %}

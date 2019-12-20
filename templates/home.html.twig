@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="box-logo-home-tao">
+    <div class="box-logo-home-tao d-flex justify-content-center">
         <img src="https://upload.wikimedia.org/wikipedia/fr/1/13/Logo_TAO_Orl%C3%A9ans_M%C3%A9tropole.png" alt="Tao Orléans" class="logo-tao-home"/>
+        <h1 class="text-primary sé">'sé</h1>
     </div>
     <div class="box-title-home mb-3">
-        <h1>TAO'sé</h1>
     </div>
 
     <div class="box-user-home-connect">
@@ -22,13 +22,13 @@
         <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
          alt="avatar image" height="70">
     </div>
-    <a class="nav-link p-0" href="{{ path('app_login') }}"><span class="btn btn-success">Connexion</span></a>
+    <a class="nav-link p-0" href="{{ path('app_login') }}"><span class="btn btn-primary">Connexion</span></a>
 
     <p class="txt-connect-home">Pas encore de compte? Cliquez sur le bouton ci dessous</p>
 
     <div class="button-create-account-home">
         <a class="nav-link p-0" href="{{ path('app_register') }}">
-            <button type="button" class="btn btn-success">Créer un compte</button>
+            <button type="button" class="btn btn-primary">Créer un compte</button>
         </a>
     </div>
 {% endif %}

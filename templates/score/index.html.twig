@@ -7,29 +7,32 @@
         {% include 'include/_navbar.html.twig' %}
     </header>
     <main>
-        <div class="box-title-score">
-            <h1>Meilleurs scores "verts"</h1>
+        <div class="box-title-score mb-5">
+            <h1>Meilleurs scores <span class="text-primary">"verts"</span></h1>
         </div>
-        <table class="box-table-score">
-            <div class="table-score">
-                <thead>
+        <table class="box-table-score m-auto">
+            <div class="table-score ">
+                <thead class="border-bottom">
                 <tr>
                     <th>Prénom</th>
                     <th>Nom</th>
                     <th>Scores</th>
                 </tr>
                 </thead>
+
                 <tbody>
                     {% for user in users %}
                     <tr>
                         <td class="player">{{ user.firstname }}</td>
                         <td class="player">{{ user.lastname }}</td>
-                        <td class="score-player">{{ user.xp }}</td>
+                        <td class="score-player text-secondary">{{ user.xp }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </div>
         </table>
+        <img src="{{ asset('build/ville-verte.jpg') }}" alt="">
     </main>
+
 
 {% endblock %}
