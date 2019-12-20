@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
 
+
     const LEVEL_COEFF = 1000;
 
     /**
@@ -23,17 +24,22 @@ class UserController extends AbstractController
     {
         $user = $this->getUser();
 
+
+
+
+
         $user->setXp( $user->getXp() + $points);
         $entityManager->persist($user);
         $entityManager->flush();
+
 
 
         //niveau récupéré
 //        ceil($user->getXp() / self::LEVEL_COEFF);
         //nb points
 
+        return $this->redirectToRoute('score_index');
 
-        return $this->render ('score/index.html.twig');
     }
 
 }
