@@ -24,8 +24,6 @@ class UserFixtures extends Fixture
         $subscriber->setRoles(['ROLE_SUBSCRIBER']);
         $subscriber->setFirstname('Pierre');
         $subscriber->setLastname('Jean');
-        $subscriber->setLevel(1);
-        $subscriber->setXp(100);
         $subscriber->setPassword($this->passwordEncoder->encodePassword(
             $subscriber,
             'subscriberpassword'

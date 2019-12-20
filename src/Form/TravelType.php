@@ -24,20 +24,20 @@ class TravelType extends AbstractType
                 //'choices' => $stations,
                 'choices' => ['Stations vélo +' => $stations, 'Parkings relais' =>$stationCarservice],
                 'label' => 'Départ',
-                'mapped' => false,
+//                'mapped' => false,
             ])
             ->add('finish', ChoiceType::class, [
                 //'choices' => $stations,
                 'choices' => ['Stations vélo +' => $stations, 'Parkings relais' =>$stationCarservice],
                 'label' => 'Arrivée',
-                'mapped' => false,
+//                'mapped' => false,
             ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Travel::class,
+//            'data_class' => Travel::class,
         ]);
     }
 }

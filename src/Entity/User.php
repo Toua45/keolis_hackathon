@@ -60,12 +60,12 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="integer")
      */
-    private $level;
+    private $level = 1;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $xp;
+    private $xp = 0;
 
 
     public function getId(): ?int
@@ -162,6 +162,7 @@ class User implements UserInterface
         }
     }
 
+    }
     public function getFirstname(): ?string
     {
         return $this->firstname;
