@@ -162,7 +162,6 @@ class User implements UserInterface
         }
     }
 
-    }
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -174,7 +173,6 @@ class User implements UserInterface
 
         return $this;
     }
-
 
     public function removeTravel(Travel $travel): self
     {
