@@ -8,7 +8,7 @@
                 <button class="btn btn-link w-100 text-decoration-none text-success" type="button"
                         data-toggle="collapse" data-target="#collapse{{ key }}" aria-expanded="false"
                         aria-controls="collapse{{ key }}">
-                    <p>1500 pts d'expérience</p>
+                    <p>{{ 1000 - (journey.co2_emission.value|round() ) }} pts d'expérience</p>
                     <div class="d-flex justify-content-between">
                         <p>CO2 : {{ journey.co2_emission.value|round() }}</p>
                         <p>{{ (journey.durations.total / 60)|round() }} min</p>
@@ -24,13 +24,14 @@
             </div>
 
             <button class="btn btn-success">Choisir</button>
+
             <div id="collapse{{ key }}" class="collapse" aria-labelledby="heading{{ key }}"
                  data-parent="#accordionExample">
 
                 <div class="card-body">
 
                     {% for section in journey.sections %}
-
+                        {% if section.type != 'waiting' %}
                         <div class="d-flex justify-content-between">
                             <p>{{ section.departure_date_time|date('H:i') }}</p>
                             <p>{{ section.from.name }}</p>
@@ -38,7 +39,7 @@
 
 
                         <div class="d-flex justify-content-between">
-                        {% if section.type != 'waiting' %}
+
 
                             {% if section.display_informations is defined %}
                                 {% if section.display_informations.physical_mode == 'Bus' %}
@@ -46,7 +47,6 @@
                                     <p>Physical mode : {{ section.display_informations.physical_mode }}</p>
                                 {% elseif section.display_informations.physical_mode == 'Tramway' %}
                                     <i class="fas fa-2x fa-subway"></i>
-                                    <p>Physical mode : {{ section.display_informations.physical_mode }}</p>
                                 {% endif %}
                                 <p>Ligne : {{ section.display_informations.code }}</p>
                             {% endif %}

@@ -47,6 +47,7 @@ class User implements UserInterface
         $this->travels = new ArrayCollection();
     }
 
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $firstname;
@@ -160,6 +161,7 @@ class User implements UserInterface
             $travel->setUser($this);
         }
 
+    }
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -182,7 +184,7 @@ class User implements UserInterface
                 $travel->setUser(null);
             }
         }
-
+    }
     public function getLastname(): ?string
     {
         return $this->lastname;
