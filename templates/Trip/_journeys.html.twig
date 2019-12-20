@@ -1,17 +1,20 @@
-<h2 class="text-center mt-5 mb-3">Choisi la ligne verte</h2>
 
-<div class="accordion" id="accordionExample">
+{% if journeys is not empty %}
+    <h2 class="text-center mt-4 mb-3">Choisi ta <span class="text-primary">Ligne Verte</span> !</h2>
+{% endif %}
+
+<div class="accordion mb-5" id="accordionExample">
     {% for key, journey in journeys %}
-        <div class="card m-2">
+        <div class="card mb-3 border-primary">
 
-            <div class="card-header" id="heading{{ key }}">
-                <button class="btn btn-link w-100 text-decoration-none text-success" type="button"
+            <div class="card-header bg-lighten " id="heading{{ key }}">
+                <button class="btn btn-link w-100 text-decoration-none" type="button"
                         data-toggle="collapse" data-target="#collapse{{ key }}" aria-expanded="false"
                         aria-controls="collapse{{ key }}">
-                    <p>{{ 1000 - (journey.co2_emission.value|round() ) }} pts d'expérience</p>
+                    <p>{{ 2500 - (journey.co2_emission.value|round() * 3 ) }} <span class="text-dark">points d'expérience</span></p>
                     <div class="d-flex justify-content-between">
-                        <p>CO2 : {{ journey.co2_emission.value|round() }}</p>
-                        <p>{{ (journey.durations.total / 60)|round() }} min</p>
+                        <p><span class="text-dark">CO2 =</span> {{ journey.co2_emission.value|round() }}</p>
+                        <p>{{ (journey.durations.total / 60)|round() }} <span class="text-dark">min</span></p>
 
                         {% if journey.fare.total.value is defined %}
                             <p>{{ journey.fare.total.value /100 }} €</p>
@@ -23,9 +26,8 @@
 
             </div>
 
-            <a href="{{ path('gain', {'points': 1000 - journey.co2_emission.value|round() }) }}">
-                <button type="submit" class="btn btn-success">Choisir</button>
-
+            <a href="{{ path('gain', {'points': 2500 - journey.co2_emission.value|round() * 3 }) }}">
+                <button type="submit" class="btn btn-primary w-100">Choisir</button>
             </a>
 
             <div id="collapse{{ key }}" class="collapse" aria-labelledby="heading{{ key }}"
@@ -37,47 +39,43 @@
                         {% if section.type != 'waiting' %}
                             <div class="d-flex justify-content-between">
                                 <p>{{ section.departure_date_time|date('H:i') }}</p>
-                                <p>{{ section.from.name }}</p>
+                                <p class="text-right">{{ section.from.name }}</p>
                             </div>
 
-
-                            <div class="d-flex justify-content-between">
-
+                            <div class="d-flex justify-content-around w-100 m-auto align-middle">
 
                                 {% if section.display_informations is defined %}
                                     {% if section.display_informations.physical_mode == 'Bus' %}
-                                        <i class="fas fa-2x fa-bus"></i>
-                                        <p>Physical mode : {{ section.display_informations.physical_mode }}</p>
+                                        <i class="text-secondary fas fa-2x fa-bus"></i>
                                     {% elseif section.display_informations.physical_mode == 'Tramway' %}
-                                        <i class="fas fa-2x fa-subway"></i>
+                                        <i class="text-secondary fas fa-2x fa-subway"></i>
                                     {% endif %}
-                                    <p>Ligne : {{ section.display_informations.code }}</p>
+                                    <p>{{ section.display_informations.code }}</p>
                                 {% endif %}
 
                                 {% if section.mode is defined and section.mode == 'walking' %}
-                                    <i class="fas fa-2x fa-walking"></i>
+                                    <i class="text-secondary fas fa-2x fa-walking"></i>
                                 {% endif %}
 
                                 {% if section.mode is defined and section.mode == 'bike' %}
-                                    <i class="fas fa-2x fa-biking"></i>
-                                    {# <img src="/assets/image/BikeSharingService.svg" alt="">#}
+                                    <i class="text-secondary fas fa-2x fa-biking"></i>
                                 {% endif %}
 
                                 {% if section.type is defined %}
                                     {% if section.type == 'bss_rent' %}
-                                        <p>Location d'un Vélo+</p>
+                                        <p class="text-primary p-2">Location d'un Vélo+</p>
                                     {% elseif section.type == 'bss_put_back' %}
-                                        <p>Déposer son Vélo+</p>
+                                        <p class="text-primary p-2">Déposer son Vélo+</p>
                                     {% endif %}
                                 {% endif %}
 
-                                <p>{{ (section.duration/ 60)|round() }} min</p>
+                                <p class="p-2 text-primary">{{ (section.duration/ 60)|round() }} <span class="text-dark">min</span></p>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <p>{{ section.arrival_date_time|date('H:i') }}</p>
-                                <p>{{ section.to.name }}</p>
+                                <p class="text-right">{{ section.to.name }}</p>
                             </div>
-                            <hr>
+                            <hr class="bg-primary">
 
                         {% endif %}
 

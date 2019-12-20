@@ -12,9 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
 
-
-    const LEVEL_COEFF = 1000;
-
     /**
      * @Route("/gain/{points}", name="gain")
      * @param User $user
@@ -24,14 +21,9 @@ class UserController extends AbstractController
     {
         $user = $this->getUser();
 
-
-
-
-
         $user->setXp( $user->getXp() + $points);
         $entityManager->persist($user);
         $entityManager->flush();
-
 
 
         //niveau récupéré

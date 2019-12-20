@@ -15,6 +15,6 @@ class StationCarService
         foreach ($content['records'] as $stationCar) {
             $stationsCar[$stationCar['fields']['name']] = [$stationCar['fields']['coords']['0'], $stationCar['fields']['coords']['1']];
         }
-        return $stationsCar;
+        return $stationsCar ?? [];
     }
 }
