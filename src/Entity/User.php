@@ -160,6 +160,7 @@ class User implements UserInterface
             $this->travels[] = $travel;
             $travel->setUser($this);
         }
+    }
 
     }
     public function getFirstname(): ?string
@@ -185,6 +186,7 @@ class User implements UserInterface
             }
         }
     }
+
     public function getLastname(): ?string
     {
         return $this->lastname;

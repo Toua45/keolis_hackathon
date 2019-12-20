@@ -17,7 +17,6 @@ class StationService
             $stations[$station['fields']['nomstation']] = [$station['fields']['latitude'], $station['fields']['longitude']];
         }
 
-
         return $stations;
     }
 }
