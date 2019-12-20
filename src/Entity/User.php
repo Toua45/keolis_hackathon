@@ -38,16 +38,6 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Travel", mappedBy="user")
-     */
-    private $travels;
-
-    public function __construct()
-    {
-        $this->travels = new ArrayCollection();
-    }
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $firstname;
@@ -169,17 +159,6 @@ class User implements UserInterface
         $this->firstname = $firstname;
 
         return $this;
-    }
-
-    public function removeTravel(Travel $travel): self
-    {
-        if ($this->travels->contains($travel)) {
-            $this->travels->removeElement($travel);
-            // set the owning side to null (unless already changed)
-            if ($travel->getUser() === $this) {
-                $travel->setUser(null);
-            }
-        }
     }
 
     public function getLastname(): ?string

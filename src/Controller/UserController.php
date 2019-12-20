@@ -38,8 +38,8 @@ class UserController extends AbstractController
 //        ceil($user->getXp() / self::LEVEL_COEFF);
         //nb points
 
+        return $this->redirectToRoute('score_index');
 
-        return $this->render ('score/index.html.twig');
     }
 
 }
