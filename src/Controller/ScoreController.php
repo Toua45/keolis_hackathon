@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
 use App\Service\MapService;
 use App\Service\ParkingService;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,9 +13,12 @@ class ScoreController extends AbstractController
     /**
      * @Route("/score", name="score_index")
      */
-    public function index(): Response
+    public function index(UserRepository $userRepository): Response
     {
+        $users = $userRepository->findAll();
+
         return $this->render('score/index.html.twig', [
+            'users' => $users
         ]);
     }
 }

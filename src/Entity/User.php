@@ -60,11 +60,6 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="integer")
      */
-    private $level = 1;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $xp = 0;
 
 
@@ -195,18 +190,6 @@ class User implements UserInterface
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
-
-        return $this;
-    }
-
-    public function getLevel(): ?int
-    {
-        return $this->level;
-    }
-
-    public function setLevel(int $level): self
-    {
-        $this->level = $level;
 
         return $this;
     }
