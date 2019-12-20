@@ -1,4 +1,4 @@
-<h2 class="text-center">Choisi ton green voyage</h2>
+<h2 class="text-center mt-5 mb-3">Choisi la ligne verte</h2>
 
 <div class="accordion" id="accordionExample">
     {% for key, journey in journeys %}
@@ -60,7 +60,7 @@
 
                                 {% if section.mode is defined and section.mode == 'bike' %}
                                     <i class="fas fa-2x fa-biking"></i>
-                                    {#                                <img src="/assets/image/BikeSharingService.svg" alt="">#}
+                                    {# <img src="/assets/image/BikeSharingService.svg" alt="">#}
                                 {% endif %}
 
                                 {% if section.type is defined %}
