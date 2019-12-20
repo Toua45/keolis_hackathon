@@ -23,7 +23,10 @@
 
             </div>
 
-            <button class="btn btn-success">Choisir</button>
+            <a href="{{ path('gain', {'points': 1000 - journey.co2_emission.value|round() }) }}">
+                <button type="submit" class="btn btn-success">Choisir</button>
+
+            </a>
 
             <div id="collapse{{ key }}" class="collapse" aria-labelledby="heading{{ key }}"
                  data-parent="#accordionExample">
@@ -32,43 +35,43 @@
 
                     {% for section in journey.sections %}
                         {% if section.type != 'waiting' %}
-                        <div class="d-flex justify-content-between">
-                            <p>{{ section.departure_date_time|date('H:i') }}</p>
-                            <p>{{ section.from.name }}</p>
-                        </div>
+                            <div class="d-flex justify-content-between">
+                                <p>{{ section.departure_date_time|date('H:i') }}</p>
+                                <p>{{ section.from.name }}</p>
+                            </div>
 
 
-                        <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
 
 
-                            {% if section.display_informations is defined %}
-                                {% if section.display_informations.physical_mode == 'Bus' %}
-                                    <i class="fas fa-2x fa-bus"></i>
-                                    <p>Physical mode : {{ section.display_informations.physical_mode }}</p>
-                                {% elseif section.display_informations.physical_mode == 'Tramway' %}
-                                    <i class="fas fa-2x fa-subway"></i>
-                                {% endif %}
-                                <p>Ligne : {{ section.display_informations.code }}</p>
-                            {% endif %}
-
-                            {% if section.mode is defined and section.mode == 'walking' %}
-                                <i class="fas fa-2x fa-walking"></i>
-                            {% endif %}
-
-                            {% if section.mode is defined and section.mode == 'bike' %}
-                                <i class="fas fa-2x fa-biking"></i>
-{#                                <img src="/assets/image/BikeSharingService.svg" alt="">#}
-                            {% endif %}
-
-                            {% if section.type is defined %}
-                                {% if section.type == 'bss_rent' %}
-                                <p>Location d'un Vélo+</p>
-                                    {% elseif section.type == 'bss_put_back' %}
-                                    <p>Déposer son Vélo+</p>
+                                {% if section.display_informations is defined %}
+                                    {% if section.display_informations.physical_mode == 'Bus' %}
+                                        <i class="fas fa-2x fa-bus"></i>
+                                        <p>Physical mode : {{ section.display_informations.physical_mode }}</p>
+                                    {% elseif section.display_informations.physical_mode == 'Tramway' %}
+                                        <i class="fas fa-2x fa-subway"></i>
                                     {% endif %}
-                            {% endif %}
+                                    <p>Ligne : {{ section.display_informations.code }}</p>
+                                {% endif %}
 
-                            <p>{{ (section.duration/ 60)|round() }} min</p>
+                                {% if section.mode is defined and section.mode == 'walking' %}
+                                    <i class="fas fa-2x fa-walking"></i>
+                                {% endif %}
+
+                                {% if section.mode is defined and section.mode == 'bike' %}
+                                    <i class="fas fa-2x fa-biking"></i>
+                                    {#                                <img src="/assets/image/BikeSharingService.svg" alt="">#}
+                                {% endif %}
+
+                                {% if section.type is defined %}
+                                    {% if section.type == 'bss_rent' %}
+                                        <p>Location d'un Vélo+</p>
+                                    {% elseif section.type == 'bss_put_back' %}
+                                        <p>Déposer son Vélo+</p>
+                                    {% endif %}
+                                {% endif %}
+
+                                <p>{{ (section.duration/ 60)|round() }} min</p>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <p>{{ section.arrival_date_time|date('H:i') }}</p>

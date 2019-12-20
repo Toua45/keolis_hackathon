@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,33 +12,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
 
-    const TRIP1 = 1000;
-    const TRIP2 = 500;
-    const TRIP3 = 250;
+
     const LEVEL_COEFF = 1000;
 
     /**
-     * @Route("/gain", name="gain")
+     * @Route("/gain/{points}", name="gain")
      * @param User $user
      * @return Response
      */
-    public function gain(UserRepository $userRepository): Response
+    public function gain(int $points, EntityManagerInterface $entityManager): Response
     {
-
-        $user = $userRepository->find(19);
-
+        $user = $this->getUser();
 
 
-        $xp = $user->getXp() + self::TRIP1;
 
-        $user->setXp($xp);
+
+
+        $user->setXp( $user->getXp() + $points);
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+
+
         //niveau récupéré
-        var_dump(ceil($user->getXp() / self::LEVEL_COEFF));
+//        ceil($user->getXp() / self::LEVEL_COEFF);
         //nb points
-        var_dump($user->getXp());
 
 
-        return $this->render ('Gain/index.html.twig');
+        return $this->render ('score/index.html.twig');
     }
 
 }

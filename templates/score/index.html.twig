@@ -6,22 +6,20 @@
     <header>
         {% include 'include/_navbar.html.twig' %}
     </header>
-   <main>
-    <div class="box-title-score">
-        <h1>Meilleurs scores "verts"</h1>
-    </div>
-       <div class="box-table-score">
-           <table class="table-score">
-               <tr>
-                   <td class="player">Jean Claude</td>
-                   <td class="score-player">3300</td>
-               </tr>
-               <tr>
-                   <td class="player">Antoine</td>
-                   <td class="score-player">2800</td>
-               </tr>
-           </table>
-       </div>
-   </main>
+    <main>
+        <div class="box-title-score">
+            <h1>Meilleurs scores "verts"</h1>
+        </div>
+        <div class="box-table-score">
+            <div class="table-score">
+                <ul>
+                    {% for user in users %}
+                        <li class="player">{{ user.firstname }}</li>
+                        <li class="score-player">{{ user.xp }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </main>
 
 {% endblock %}
