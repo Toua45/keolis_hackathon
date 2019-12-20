@@ -25,14 +25,5 @@ class StationService
             $stations[$station['fields']['nomstation']] = [$station['fields']['latitude'], $station['fields']['longitude']];
         }
         return $stations;
-
-        /*$client = HttpClient::create();
-        $response = $client->request('GET', 'https://api-adresse.data.gouv.fr/search/?q=' . $cityName);
-        $content = $response->toArray();
-        $stations = $content['features'][0]['geometry']['coordinates'];
-        /*foreach ($content['features'] as $station) {
-            $stations[$station['properties']['label']] = [$station['geometry']['coordinates'][0], $station['geometry']['coordinates'][1]];
-        }
-        return $stations;*/
     }
 }
