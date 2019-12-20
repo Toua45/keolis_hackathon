@@ -18,7 +18,7 @@ class ScoreController extends AbstractController
         $users = $userRepository->findAll();
 
         return $this->render('score/index.html.twig', [
-            'users' => $users
+            'users' => $users ?? []
         ]);
     }
 }
