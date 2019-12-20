@@ -15,6 +15,8 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+    const LEVEL_COEFF = 2500;
+
     /**
      * @Route("/login", name="app_login")
      */
@@ -76,12 +78,19 @@ class SecurityController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
-        /**
-         * @Route("/my-profile", name="app_profile")
-         */
-        public function profile()
+
+    /**
+     * @Route("/my-profile", name="app_profile")
+     */
+    public function profile()
     {
-        return $this->render('security/profile.html.twig', []);
+        $user = $this->getUser();
+        $level = ceil($user->getXp() / self::LEVEL_COEFF);
+
+
+        return $this->render('security/profile.html.twig', [
+            'level' => $level
+        ]);
     }
 
 }
