@@ -10,16 +10,26 @@
         <div class="box-title-score">
             <h1>Meilleurs scores "verts"</h1>
         </div>
-        <div class="box-table-score">
+        <table class="box-table-score">
             <div class="table-score">
-                <ul>
+                <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Scores</th>
+                </tr>
+                </thead>
+                <tbody>
                     {% for user in users %}
-                        <li class="player">{{ user.firstname }}</li>
-                        <li class="score-player">{{ user.xp }}</li>
+                    <tr>
+                        <td class="player">{{ user.firstname }}</td>
+                        <td class="player">{{ user.lastname }}</td>
+                        <td class="score-player">{{ user.xp }}</td>
+                    </tr>
                     {% endfor %}
-                </ul>
+                </tbody>
             </div>
-        </div>
+        </table>
     </main>
 
 {% endblock %}

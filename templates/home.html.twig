@@ -4,8 +4,8 @@
     <div class="box-logo-home-tao">
         <img src="https://upload.wikimedia.org/wikipedia/fr/1/13/Logo_TAO_Orl%C3%A9ans_M%C3%A9tropole.png" alt="Tao Orléans" class="logo-tao-home"/>
     </div>
-    <div class="box-title-home">
-        <h1>Bienvenue sur le réseau TAO</h1>
+    <div class="box-title-home mb-3">
+        <h1>TAO'sé</h1>
     </div>
 
     <div class="box-user-home-connect">
@@ -22,13 +22,13 @@
         <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
          alt="avatar image" height="70">
     </div>
-    <a class="nav-link p-0" href="{{ path('app_login') }}"><span class="button-connect-home">CONNEXION</span></a>
+    <a class="nav-link p-0" href="{{ path('app_login') }}"><span class="btn btn-success">Connexion</span></a>
 
     <p class="txt-connect-home">Pas encore de compte? Cliquez sur le bouton ci dessous</p>
 
     <div class="button-create-account-home">
-        <a class="nav-link p-0" href="{{ path('app_login') }}">
-            <button type="button" class="btn btn-primary">Créer un compte</button>
+        <a class="nav-link p-0" href="{{ path('app_register') }}">
+            <button type="button" class="btn btn-success">Créer un compte</button>
         </a>
     </div>
 {% endif %}
