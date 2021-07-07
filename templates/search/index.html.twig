@@ -4,14 +4,25 @@
     <header>
         {% include 'include/_navbar.html.twig' %}
     </header>
-    <h1>Bienvenue {{ app.user.username }}</h1>
-
+    <div class="box-profil-infos-home">
+        <div class="box-title-search">
+            <p><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar.jpg" class="rounded-circle z-depth-0"
+                        alt="avatar image" height="60"></p>
+            <h1>{{ app.user.firstname }}</h1>
+            <div class="box-infos-pts-search">
+                <div class="box-links-footer">
+                    <div class="align-middle">
+                        <p class="li-infos-profil">Points: {{ app.user.xp }}</p>
+                        <p class="li-infos-profil">Niveau: 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
         <div class="container-fluid">
-        <div>
-            <iframe class="map w-100" style="height: 100vh"
-                    src="https://data.orleans-metropole.fr/explore/embed/dataset/mobilite-places-disponibles-parkings-en-temps-reel/parkings-en-temps-reel/"></iframe>
+
         </div>
-        </div>
+        {% include 'include/_footer.html.twig' %}
     </main>
 {% endblock %}
